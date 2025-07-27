@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Edukasi: Susun Kata Bahasa Inggris Anak</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="sounds/bgm/bgm_category.mp3" as="audio">
+</head>
+<body class="dashboard">
+  <audio id="bgm" preload="auto" aria-label="Musik Latar Belakang">
+    <source src="sounds/bgm/bgm_category.mp3" type="audio/mpeg">
+    <p>Browser Anda tidak mendukung audio HTML5.</p>
+  </audio>
+
+  <main class="dashboard-container" role="main">
+    <header>
+      <h1 class="big-welcome">🎮 Game Edukasi: Susun Kata Bahasa Inggris Anak</h1>
+    </header>
+
+    <section id="start-screen" class="screen-section" aria-labelledby="start-screen-heading">
+      <div class="welcome-content">
+        <h2 id="start-screen-heading" class="sr-only">Selamat Datang</h2>
+        <p class="big-subtitle">🌟 Belajar bahasa Inggris dengan cara yang menyenangkan!</p>
+        <p class="big-subtitle">🎯 Susun huruf menjadi kata yang benar</p>
+        <button class="start-game-button" type="button" aria-label="Mulai Permainan">
+          ▶️ Mulai Permainan
+        </button>
+        <p class="big-subtitle decorative-text" aria-hidden="true">🧩✨🎉</p>
+      </div>
+    </section>
+
+    <section id="category-selection" class="screen-section hidden" aria-labelledby="category-selection-heading">
+      <header>
+        <h2 id="category-selection-heading" class="big-subtitle">Pilih kategori permainan:</h2>
+      </header>
+      <nav class="button-container" role="navigation" aria-label="Pilih Kategori Game">
+        <button class="category-btn" data-category="animals" type="button" aria-label="Kategori Nama Hewan">
+          🐶 Nama Hewan
+        </button>
+        <button class="category-btn" data-category="fruits" type="button" aria-label="Kategori Nama Buah">
+          🍎 Nama Buah
+        </button>
+        <button class="category-btn" data-category="vegetables" type="button" aria-label="Kategori Nama Sayur">
+          🥕 Nama Sayur
+        </button>
+        <button class="category-btn" data-category="greetings" type="button" aria-label="Kategori Kalimat Sapaan">
+          👋 Kalimat Sapaan
+        </button>
+        <button class="category-btn" data-category="days" type="button" aria-label="Kategori Nama Hari">
+          📅 Nama Hari
+        </button>
+      </nav>
+    </section>
+  </main>
+
+  <div id="loading" class="loading-overlay hidden" aria-hidden="true">
+    <div class="spinner"></div>
+    <p>Memuat permainan...</p>
+  </div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/audio-manager.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

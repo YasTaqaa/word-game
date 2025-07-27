@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skor Permainan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="sounds/bgm/bgm_score.mp3" as="audio">
+</head>
+<body class="full-bg score">
+  <audio id="bgm" preload="auto" aria-label="Musik Latar Belakang">
+    <source src="sounds/bgm/bgm_score.mp3" type="audio/mpeg">
+    <p>Browser Anda tidak mendukung audio HTML5.</p>
+  </audio>
+
+  <main class="container-score" role="main">
+    <header>
+      <h1 class="big-score">🏆 Skor Permainan Anda</h1>
+    </header>
+
+    <section class="score-section" aria-label="Hasil permainan dan statistik">
+      <div id="score-display" class="score-display" role="status" aria-live="polite">
+        Memuat skor...
+      </div>
+
+      <p id="score-message" class="score-message" role="status" aria-live="polite"></p>
+
+      <div class="score-bar" role="progressbar" aria-label="Skor dalam bentuk persentase">
+        <div class="score-fill" id="score-fill"></div>
+      </div>
+
+      <div id="detailed-stats" class="detailed-stats hidden" aria-live="polite" aria-atomic="true">
+        <h3>📊 Statistik Detail</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-label">Kategori:</span>
+            <span id="stat-category" class="stat-value">-</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Waktu Total:</span>
+            <span id="stat-time" class="stat-value">-</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Rata-rata per Soal:</span>
+            <span id="stat-avg-time" class="stat-value">-</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Tingkat Akurasi:</span>
+            <span id="stat-accuracy" class="stat-value">-</span>
+          </div>
+        </div>
+        
+        <div id="achievements" class="achievements" aria-labelledby="achievements-heading">
+          <h4 id="achievements-heading">🏅 Pencapaian</h4>
+          <div id="badge-container" class="badge-container">
+            </div>
+        </div>
+      </div>
+
+      <button id="toggle-stats" class="toggle-stats-btn" type="button" aria-expanded="false" aria-controls="detailed-stats">
+        📈 Lihat Detail Statistik
+      </button>
+    </section>
+
+    <nav class="button-container" role="navigation" aria-label="Pilihan setelah permainan">
+      <a href="index.html" class="score-btn back-link" aria-label="Kembali ke beranda utama">
+        🏠 Kembali ke Beranda
+      </a>
+      <button id="restart-btn" class="score-btn restart-btn" type="button" aria-label="Ulangi permainan kategori yang sama">
+        🔄 Ulangi Permainan
+      </button>
+    </nav>
+
+    <section id="high-scores" class="high-scores hidden" aria-labelledby="high-scores-heading">
+      <h3 id="high-scores-heading">👑 Skor Tertinggi</h3>
+      <div id="high-scores-list" class="high-scores-list">
+        </div>
+    </section>
+  </main>
+
+  <div id="loading" class="loading-overlay hidden" aria-hidden="true">
+    <div class="spinner"></div>
+    <p>Menghitung skor...</p>
+  </div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/audio-manager.js" defer></script>
+  <script src="js/score-manager.js" defer></script>
+</body>
+</html>
